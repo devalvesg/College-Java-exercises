@@ -41,10 +41,10 @@ public class CarItem {
 
     @Override
     public String toString() {
-        return "CarItem{" +
+        return
                 "id=" + id +
                 ", quantity=" + quantity +
-                ", product=" + product +
-                '}';
+                ", product=" + product;
+
     }
 }

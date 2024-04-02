@@ -23,6 +23,14 @@ public class ShoppingCart {
 
     public void setCarItem(int id, int quantity, Product product) {
         this.carItens.add(new CarItem(id,quantity,product));
+        recalcPrice();
+    }
+
+    public void recalcPrice(){
+        totalPrice = 0;
+        carItens.forEach(x -> {
+            totalPrice += x.getProduct().getPrice() * x.getQuantity();
+        });
     }
 
     public ShoppingCart() {
@@ -48,10 +56,10 @@ public class ShoppingCart {
 
     @Override
     public String toString() {
-        return "ShoppingCart{" +
+        return
                 "id=" + id +
-                ", totalPrice=" + totalPrice +
-                ", carItem=" + carItens +
-                '}';
+                "\ntotalPrice=" + totalPrice +
+                "\ncarItem=" + carItens;
+
     }
 }
